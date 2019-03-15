@@ -8,6 +8,58 @@ import Input from "../../../components/UI/Input/Input";
 
 class ContactData extends Component {
     state = {
+        orderForm: {
+            name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Your Name'
+                },
+                value: ''
+            },
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Street'
+                },
+                value: ''
+            },
+            zipCode: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'ZIP Code'
+                },
+                value: ''
+            },
+            country: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Country'
+                },
+                value: ''
+            },
+            email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                    placeholder: 'Your email'
+                },
+                value: ''
+            },
+            deliveryMethod: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        {value: 'fastest', displayValue: 'Fastest'},
+                        {value: 'cheapest', displayValue: 'Cheapest'},
+                    ]
+                },
+                value: ''
+            }
+        },
         name: '',
         email: '',
         address: {
@@ -49,6 +101,7 @@ class ContactData extends Component {
     render() {
         console.log('log', this.props);
         let form = (<form>
+            <Input elementType="..." elementConfig="..." value="..."/>
             <Input inputtype="input" type="text" name="name" placeholder="Your name"/>
             <Input inputtype="input" type="email" name="email" placeholder="Your email"/>
             <Input inputtype="input" type="text" name="street" placeholder="Street"/>
