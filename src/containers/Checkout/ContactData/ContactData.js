@@ -57,6 +57,10 @@ class ContactData extends Component {
                     placeholder: 'Your email'
                 },
                 value: '',
+                validation: {
+                    required: true
+                },
+                valid: false,
                 touched: false
             },
             deliveryMethod: {
@@ -68,6 +72,7 @@ class ContactData extends Component {
                     ]
                 },
                 value: '',
+                validation: {},
                 valid: true
             }
         },
@@ -77,6 +82,9 @@ class ContactData extends Component {
 
     checkValidity(value, rules) {
         let isValid = true;
+        if (!rules) {
+            return true;
+        }
 
         if (rules.required) {
             isValid = value.trim() !== '' && isValid;
@@ -128,7 +136,6 @@ class ContactData extends Component {
         for (let inputIdentifier in updatedOrderForm) {
             formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
         }
-        console.log(formIsValid);
         this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
     };
 
